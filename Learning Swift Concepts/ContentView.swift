@@ -36,6 +36,9 @@ func destinationView(concept: SwiftConceptsModel) -> some View {
     switch concept.identifier {
     case .looseCoupling:
         return AnyView(LooseCoupleView(title: concept.name))
+        
+    case .mVP:
+        return AnyView(MVPDemo(title: concept.name))
 
     case .solidPrinciple,
          .deferKeyword,

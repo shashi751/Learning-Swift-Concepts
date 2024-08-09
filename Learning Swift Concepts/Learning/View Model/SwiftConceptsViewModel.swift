@@ -18,6 +18,7 @@ enum SwiftConceptsEnum:String, Codable {
     case initializers = "Designated || Convience || Failable || Required Initializer"
     case interviewProgrammingProblums = "Interview Programming Problum"
     case looseCoupling = "Loose vs Tight Coupling"
+    case mVP = "Model View Presenter"
     
 }
 
@@ -28,6 +29,7 @@ class SwiftConceptsViewModel:ObservableObject{
     func getConcepts(){
         var concepts = [SwiftConceptsModel]()
         concepts.append(SwiftConceptsModel(id: "8", name: SwiftConceptsEnum.looseCoupling.rawValue, identifier: .looseCoupling))
+        concepts.append(SwiftConceptsModel(id: "9", name: SwiftConceptsEnum.mVP.rawValue, identifier: .mVP))
         concepts.append(SwiftConceptsModel(id: "1", name: SwiftConceptsEnum.weakVsUnOwned.rawValue, identifier: .weakVsUnOwned))
         concepts.append(SwiftConceptsModel(id: "2", name: SwiftConceptsEnum.solidPrinciple.rawValue, identifier: .solidPrinciple))
         concepts.append(SwiftConceptsModel(id: "3", name: SwiftConceptsEnum.clouser.rawValue, identifier: .clouser))
