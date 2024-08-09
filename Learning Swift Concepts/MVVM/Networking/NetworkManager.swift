@@ -15,7 +15,7 @@ enum NetworkingError:Error{
 }
 
 protocol NetworkManagerDelegate{
-    func fetchRequest<T:Codable>(type:T.Type, completion:@escaping (Result<T, NetworkingError>) -> Void)
+    func fetchRequest<T:Codable>(type:T.Type, url:String, completion:@escaping (Result<T, NetworkingError>) -> Void)
 }
 
 class NetworkManager{
@@ -26,17 +26,17 @@ class NetworkManager{
         self.networkManagerDelegate = networkManagerDelegate
     }
     
-    func fetchRequest<T:Codable>(type:T.Type, completion:@escaping (Result<T, NetworkingError>) -> Void){
+    func fetchRequest<T:Codable>(type:T.Type, url:String, completion:@escaping (Result<T, NetworkingError>) -> Void){
         
-        networkManagerDelegate.fetchRequest(type: type, completion: completion)
+        networkManagerDelegate.fetchRequest(type: type, url:url, completion: completion)
     }
 }
 
 class AlamofireNetworkManager: NetworkManagerDelegate{
     
-    func fetchRequest<T:Codable>(type:T.Type, completion:@escaping (Result<T, NetworkingError>) -> Void){
+    func fetchRequest<T:Codable>(type:T.Type, url:String, completion:@escaping (Result<T, NetworkingError>) -> Void){
         
-        AF.request("https://jsonplaceholder.typicode.com/posts", interceptor: .none).response { response in
+        AF.request(url, interceptor: .none).response { response in
             
             guard let data = response.data else{
                 completion(.failure(.badURL))
@@ -58,9 +58,9 @@ class AlamofireNetworkManager: NetworkManagerDelegate{
 
 class URLSessionNetworkManager: NetworkManagerDelegate{
     
-    func fetchRequest<T:Codable>(type:T.Type, completion:@escaping (Result<T, NetworkingError>) -> Void){
+    func fetchRequest<T:Codable>(type:T.Type, url:String, completion:@escaping (Result<T, NetworkingError>) -> Void){
         
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else{
+        guard let url = URL(string: url) else{
             completion(.failure(.badURL))
             return
         }

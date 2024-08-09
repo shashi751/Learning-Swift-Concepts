@@ -14,8 +14,6 @@ struct ConceptRowView: View {
     var body: some View {
         HStack(alignment:.center){
             HStack{
-                Text("\((Int(concept.id) ?? 0) + 1). ")
-                    .fontWeight(.bold)
                 Text(concept.name)
             }
         }

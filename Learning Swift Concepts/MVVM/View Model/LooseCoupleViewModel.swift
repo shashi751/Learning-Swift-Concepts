@@ -10,31 +10,70 @@ import Foundation
 
 class LooseCoupleViewModel: ObservableObject{
     
-    @Published var users = [JSONPlaceholderUser]()
+    @Published var users = [UserModel]()
     @Published var errorMessage = String()
     
-    let networkmanager : NetworkManagerDelegate
+    let userRepository : UserReositoryDelegate
     
-    init(networkmanager: NetworkManagerDelegate=URLSessionNetworkManager()) {
-        self.networkmanager = networkmanager
+    init(userRepository: UserReositoryDelegate=UserReository()) {
+        self.userRepository = userRepository
     }
     
     func fetchUsers(){
-        
-        networkmanager.fetchRequest(type: [JSONPlaceholderUser].self) { result in
+        fetchJSONUsers()
+//        fetchGitHubUSers()
+    }
+    
+    private func fetchJSONUsers(){
+        userRepository.fetchJSONUsersUsers(type: [ResponseElement].self) {[weak self] result in
             
             switch result{
             case .success(let users):
                 DispatchQueue.main.async {
-                    self.users = users
+                    self?.users = self?.convertResponseElementToUserModel(input: users) ?? []
                 }
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.errorMessage = error.localizedDescription
+                    self?.errorMessage = error.localizedDescription
                 }
                 print(error)
             }
         }
+    }
+    
+    private func fetchGitHubUSers(){
+        
+        userRepository.fetchGitHUbUsers(type: [GitHubUser].self) {[weak self] result in
+            
+            switch result{
+            case .success(let users):
+                DispatchQueue.main.async {
+                    self?.users = self?.convertResponseElementToUserModel(input: users) ?? []
+                }
+                
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.errorMessage = error.localizedDescription
+                }
+                print(error)
+            }
+        }
+    }
+    
+    private func convertResponseElementToUserModel(input:[ResponseElement]) -> [UserModel]{
+        var users = [UserModel]()
+        for item in input{
+            users.append(UserModel(id: item.id, name: item.name))
+        }
+        return users
+    }
+    
+    private func convertResponseElementToUserModel(input:[GitHubUser]) -> [UserModel]{
+        var users = [UserModel]()
+        for item in input{
+            users.append(UserModel(id: item.id, name: item.login))
+        }
+        return users
     }
 }

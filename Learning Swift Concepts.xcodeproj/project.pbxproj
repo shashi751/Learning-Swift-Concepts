@@ -15,11 +15,14 @@
 		D74100452C652F8D007D38D8 /* SwiftConceptsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74100442C652F8D007D38D8 /* SwiftConceptsViewModel.swift */; };
 		D74100472C653077007D38D8 /* ConceptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74100462C653077007D38D8 /* ConceptRowView.swift */; };
 		D741004B2C65CF87007D38D8 /* LooseCoupleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741004A2C65CF87007D38D8 /* LooseCoupleView.swift */; };
-		D74100522C65DC19007D38D8 /* JSONPlaceholderUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74100512C65DC19007D38D8 /* JSONPlaceholderUser.swift */; };
+		D74100522C65DC19007D38D8 /* ResponseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74100512C65DC19007D38D8 /* ResponseElement.swift */; };
 		D761E69D2C65DF7100473544 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D761E69C2C65DF7100473544 /* Alamofire */; };
 		D761E69F2C65E48900473544 /* LooseCoupleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E69E2C65E48900473544 /* LooseCoupleViewModel.swift */; };
 		D761E6A12C65E5CC00473544 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6A02C65E5CC00473544 /* NetworkManager.swift */; };
 		D761E6A42C65F02300473544 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6A32C65F02300473544 /* UserModel.swift */; };
+		D761E6A62C662F6600473544 /* UserReository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6A52C662F6600473544 /* UserReository.swift */; };
+		D761E6A92C66328300473544 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6A82C66328300473544 /* GitHubUser.swift */; };
+		D761E6AB2C66379700473544 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6AA2C66379700473544 /* InfoButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +35,13 @@
 		D74100442C652F8D007D38D8 /* SwiftConceptsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConceptsViewModel.swift; sourceTree = "<group>"; };
 		D74100462C653077007D38D8 /* ConceptRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptRowView.swift; sourceTree = "<group>"; };
 		D741004A2C65CF87007D38D8 /* LooseCoupleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooseCoupleView.swift; sourceTree = "<group>"; };
-		D74100512C65DC19007D38D8 /* JSONPlaceholderUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceholderUser.swift; sourceTree = "<group>"; };
+		D74100512C65DC19007D38D8 /* ResponseElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseElement.swift; sourceTree = "<group>"; };
 		D761E69E2C65E48900473544 /* LooseCoupleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooseCoupleViewModel.swift; sourceTree = "<group>"; };
 		D761E6A02C65E5CC00473544 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D761E6A32C65F02300473544 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D761E6A52C662F6600473544 /* UserReository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReository.swift; sourceTree = "<group>"; };
+		D761E6A82C66328300473544 /* GitHubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
+		D761E6AA2C66379700473544 /* InfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				D74100402C652F0C007D38D8 /* SwiftConceptsModel.swift */,
-				D74100512C65DC19007D38D8 /* JSONPlaceholderUser.swift */,
+				D74100512C65DC19007D38D8 /* ResponseElement.swift */,
+				D761E6A82C66328300473544 /* GitHubUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 		D74100432C652F17007D38D8 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				D761E6A72C662F6C00473544 /* Reository */,
 				D761E6A22C65E5E900473544 /* Networking */,
 				D74100492C6533C3007D38D8 /* View Model */,
 				D74100422C652F11007D38D8 /* Model */,
@@ -111,6 +119,7 @@
 			children = (
 				D74100462C653077007D38D8 /* ConceptRowView.swift */,
 				D741004A2C65CF87007D38D8 /* LooseCoupleView.swift */,
+				D761E6AA2C66379700473544 /* InfoButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +140,14 @@
 				D761E6A02C65E5CC00473544 /* NetworkManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		D761E6A72C662F6C00473544 /* Reository */ = {
+			isa = PBXGroup;
+			children = (
+				D761E6A52C662F6600473544 /* UserReository.swift */,
+			);
+			path = Reository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,11 +229,14 @@
 				D761E6A12C65E5CC00473544 /* NetworkManager.swift in Sources */,
 				D74100472C653077007D38D8 /* ConceptRowView.swift in Sources */,
 				D741004B2C65CF87007D38D8 /* LooseCoupleView.swift in Sources */,
-				D74100522C65DC19007D38D8 /* JSONPlaceholderUser.swift in Sources */,
+				D74100522C65DC19007D38D8 /* ResponseElement.swift in Sources */,
 				D761E69F2C65E48900473544 /* LooseCoupleViewModel.swift in Sources */,
 				D74100352C652E8C007D38D8 /* ContentView.swift in Sources */,
 				D74100332C652E8C007D38D8 /* Learning_Swift_ConceptsApp.swift in Sources */,
 				D74100412C652F0C007D38D8 /* SwiftConceptsModel.swift in Sources */,
+				D761E6AB2C66379700473544 /* InfoButton.swift in Sources */,
+				D761E6A62C662F6600473544 /* UserReository.swift in Sources */,
+				D761E6A92C66328300473544 /* GitHubUser.swift in Sources */,
 				D761E6A42C65F02300473544 /* UserModel.swift in Sources */,
 				D74100452C652F8D007D38D8 /* SwiftConceptsViewModel.swift in Sources */,
 			);

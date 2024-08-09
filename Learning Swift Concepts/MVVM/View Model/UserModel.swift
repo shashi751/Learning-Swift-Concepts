@@ -8,6 +8,6 @@
 import Foundation
 
 struct UserModel: Codable, Identifiable{
-    var id : String
+    var id : Int
     var name: String
 }
