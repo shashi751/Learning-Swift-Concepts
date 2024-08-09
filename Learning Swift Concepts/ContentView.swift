@@ -19,7 +19,8 @@ struct ContentView: View {
                         ConceptRowView(concept: concept)
                     }
                 }
-                
+                .navigationBarTitleDisplayMode(.inline)
+                .listStyle(PlainListStyle())
                 .navigationTitle("Swift Concepts")
             })
         }
@@ -30,41 +31,25 @@ struct ContentView: View {
     }
 }
 
-func destinationView(concept:SwiftConceptsModel) -> some View{
+func destinationView(concept: SwiftConceptsModel) -> some View {
     
     switch concept.identifier {
-        
-    case .weakVsUnOwned:
-        LooseCoupleView()
-        
-    case .solidPrinciple:
-        LooseCoupleView()
-        
-    case .deferKeyword:
-        LooseCoupleView()
-        
-    case .clouser:
-        LooseCoupleView()
-        
-    case .frameVsBounds:
-        LooseCoupleView()
-        
-    case .jsonParsing:
-        LooseCoupleView()
-        
-    case .kVOAndKVC:
-        LooseCoupleView()
-        
-    case .initializers:
-        LooseCoupleView()
-        
-    case .interviewProgrammingProblums:
-        LooseCoupleView()
-        
     case .looseCoupling:
-        LooseCoupleView()
+        return AnyView(LooseCoupleView(title: concept.name))
+
+    case .solidPrinciple,
+         .deferKeyword,
+         .clouser,
+         .frameVsBounds,
+         .jsonParsing,
+         .kVOAndKVC,
+         .initializers,
+         .interviewProgrammingProblums,
+         .weakVsUnOwned:
+        return AnyView(EmptyView())
     }
 }
+
 
 //#Preview {
 //    ContentView()

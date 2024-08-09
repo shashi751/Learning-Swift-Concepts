@@ -13,12 +13,16 @@ struct ConceptRowView: View {
     
     var body: some View {
         HStack(alignment:.center){
-            Text(concept.name)
+            HStack{
+                Text("\((Int(concept.id) ?? 0) + 1). ")
+                    .fontWeight(.bold)
+                Text(concept.name)
+            }
         }
         
     }
 }
 
-//#Preview {
-//    ConceptRowView(concept: SwiftConceptsModel(id: "1", name: "Loose Coupling", identifier: .looseCoupling))
-//}
+#Preview {
+    ConceptRowView(concept: SwiftConceptsModel(id: "1", name: "Loose Coupling", identifier: .looseCoupling))
+}
