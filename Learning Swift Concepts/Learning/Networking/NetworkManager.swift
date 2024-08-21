@@ -12,6 +12,7 @@ enum NetworkingError:Error{
     case badURL
     case unknown
     case noData
+    case decodingError
 }
 
 protocol NetworkManagerDelegate{
@@ -34,6 +35,13 @@ class NetworkManager{
 
 class AlamofireNetworkManager: NetworkManagerDelegate{
     
+    var responseHandler:ResponseHandlerDelegate
+    
+    init(responseHandler: ResponseHandlerDelegate = ResponseHandler()) {
+        self.responseHandler = responseHandler
+    }
+    
+    
     func fetchRequest<T:Codable>(type:T.Type, url:String, completion:@escaping (Result<T, NetworkingError>) -> Void){
         
         AF.request(url, interceptor: .none).response { response in
@@ -43,20 +51,26 @@ class AlamofireNetworkManager: NetworkManagerDelegate{
                 return
             }
             
-            do{
-                let users = try JSONDecoder().decode(type, from: data)
-                completion(.success(users))
+            self.responseHandler.getModelFromResponse(data: data, type: type) { result in
                 
-            }
-            catch let error{
-                print(error)
-                completion(.failure(.unknown))
+                switch result{
+                case .success(let model):
+                    completion(.success(model))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
         }
     }
 }
 
 class URLSessionNetworkManager: NetworkManagerDelegate{
+    
+    var responseHandler:ResponseHandlerDelegate
+    
+    init(responseHandler: ResponseHandlerDelegate = ResponseHandler()) {
+        self.responseHandler = responseHandler
+    }
     
     func fetchRequest<T:Codable>(type:T.Type, url:String, completion:@escaping (Result<T, NetworkingError>) -> Void){
         
@@ -79,16 +93,39 @@ class URLSessionNetworkManager: NetworkManagerDelegate{
                 return
             }
             
-            do{
-                let modal = try JSONDecoder().decode(type, from: data)
-                completion(.success(modal))
-            }
-            catch let error{
-                print(error)
-                completion(.failure(.unknown))
+            self.responseHandler.getModelFromResponse(data: data, type: type) { result in
+                
+                switch result{
+                case .success(let model):
+                    completion(.success(model))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
             
         }
         .resume()
     }
+}
+
+/// Create interface for Response Handler
+protocol ResponseHandlerDelegate{
+    
+    func getModelFromResponse<T:Codable>(data:Data, type:T.Type, completion:@escaping(Result<T, NetworkingError>) -> Void)
+}
+
+class ResponseHandler:ResponseHandlerDelegate{
+    
+    func getModelFromResponse<T:Codable>(data: Data, type: T.Type, completion: @escaping (Result<T, NetworkingError>) -> Void){
+        
+        do{
+            let model = try JSONDecoder().decode(type, from: data)
+            completion(.success(model))
+        }
+        catch{
+            completion(.failure(NetworkingError.decodingError))
+        }
+        
+    }
+    
 }

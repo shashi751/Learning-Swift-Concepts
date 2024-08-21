@@ -16,6 +16,8 @@
 		D74100472C653077007D38D8 /* ConceptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74100462C653077007D38D8 /* ConceptRowView.swift */; };
 		D741004B2C65CF87007D38D8 /* LooseCoupleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741004A2C65CF87007D38D8 /* LooseCoupleView.swift */; };
 		D74100522C65DC19007D38D8 /* ResponseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74100512C65DC19007D38D8 /* ResponseElement.swift */; };
+		D75DAB992C74510F009B5F17 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = D75DAB982C74510F009B5F17 /* Users.json */; };
+		D75DAB9B2C74514D009B5F17 /* JsonDecoder_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75DAB9A2C74514D009B5F17 /* JsonDecoder_Test.swift */; };
 		D761E69D2C65DF7100473544 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D761E69C2C65DF7100473544 /* Alamofire */; };
 		D761E69F2C65E48900473544 /* LooseCoupleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E69E2C65E48900473544 /* LooseCoupleViewModel.swift */; };
 		D761E6A12C65E5CC00473544 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6A02C65E5CC00473544 /* NetworkManager.swift */; };
@@ -25,7 +27,18 @@
 		D761E6AB2C66379700473544 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6AA2C66379700473544 /* InfoButton.swift */; };
 		D761E6AD2C6670A600473544 /* MVPDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6AC2C6670A600473544 /* MVPDemo.swift */; };
 		D761E6AF2C66718500473544 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761E6AE2C66718500473544 /* Presenter.swift */; };
+		D7D055572C74502800C50794 /* Learning_Swift_ConceptsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D055562C74502800C50794 /* Learning_Swift_ConceptsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7D055582C74502800C50794 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D74100272C652E8C007D38D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D741002E2C652E8C007D38D8;
+			remoteInfo = "Learning Swift Concepts";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D741002F2C652E8C007D38D8 /* Learning Swift Concepts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning Swift Concepts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +51,8 @@
 		D74100462C653077007D38D8 /* ConceptRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptRowView.swift; sourceTree = "<group>"; };
 		D741004A2C65CF87007D38D8 /* LooseCoupleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooseCoupleView.swift; sourceTree = "<group>"; };
 		D74100512C65DC19007D38D8 /* ResponseElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseElement.swift; sourceTree = "<group>"; };
+		D75DAB982C74510F009B5F17 /* Users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
+		D75DAB9A2C74514D009B5F17 /* JsonDecoder_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder_Test.swift; sourceTree = "<group>"; };
 		D761E69E2C65E48900473544 /* LooseCoupleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooseCoupleViewModel.swift; sourceTree = "<group>"; };
 		D761E6A02C65E5CC00473544 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D761E6A32C65F02300473544 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -46,6 +61,8 @@
 		D761E6AA2C66379700473544 /* InfoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
 		D761E6AC2C6670A600473544 /* MVPDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPDemo.swift; sourceTree = "<group>"; };
 		D761E6AE2C66718500473544 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		D7D055542C74502700C50794 /* Learning Swift ConceptsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learning Swift ConceptsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7D055562C74502800C50794 /* Learning_Swift_ConceptsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning_Swift_ConceptsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +74,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7D055512C74502700C50794 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -64,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D74100312C652E8C007D38D8 /* Learning Swift Concepts */,
+				D7D055552C74502700C50794 /* Learning Swift ConceptsTests */,
 				D74100302C652E8C007D38D8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				D741002F2C652E8C007D38D8 /* Learning Swift Concepts.app */,
+				D7D055542C74502700C50794 /* Learning Swift ConceptsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				D74100402C652F0C007D38D8 /* SwiftConceptsModel.swift */,
+				D75DAB982C74510F009B5F17 /* Users.json */,
 				D74100512C65DC19007D38D8 /* ResponseElement.swift */,
 				D761E6A82C66328300473544 /* GitHubUser.swift */,
 			);
@@ -164,6 +191,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		D7D055552C74502700C50794 /* Learning Swift ConceptsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7D055562C74502800C50794 /* Learning_Swift_ConceptsTests.swift */,
+				D75DAB9A2C74514D009B5F17 /* JsonDecoder_Test.swift */,
+			);
+			path = "Learning Swift ConceptsTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,6 +223,24 @@
 			productReference = D741002F2C652E8C007D38D8 /* Learning Swift Concepts.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D7D055532C74502700C50794 /* Learning Swift ConceptsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7D0555A2C74502800C50794 /* Build configuration list for PBXNativeTarget "Learning Swift ConceptsTests" */;
+			buildPhases = (
+				D7D055502C74502700C50794 /* Sources */,
+				D7D055512C74502700C50794 /* Frameworks */,
+				D7D055522C74502700C50794 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7D055592C74502800C50794 /* PBXTargetDependency */,
+			);
+			name = "Learning Swift ConceptsTests";
+			productName = "Learning Swift ConceptsTests";
+			productReference = D7D055542C74502700C50794 /* Learning Swift ConceptsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,6 +253,10 @@
 				TargetAttributes = {
 					D741002E2C652E8C007D38D8 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					D7D055532C74502700C50794 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = D741002E2C652E8C007D38D8;
 					};
 				};
 			};
@@ -219,6 +277,7 @@
 			projectRoot = "";
 			targets = (
 				D741002E2C652E8C007D38D8 /* Learning Swift Concepts */,
+				D7D055532C74502700C50794 /* Learning Swift ConceptsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,8 +287,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D75DAB992C74510F009B5F17 /* Users.json in Resources */,
 				D741003A2C652E8E007D38D8 /* Preview Assets.xcassets in Resources */,
 				D74100372C652E8E007D38D8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7D055522C74502700C50794 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +325,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7D055502C74502700C50794 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75DAB9B2C74514D009B5F17 /* JsonDecoder_Test.swift in Sources */,
+				D7D055572C74502800C50794 /* Learning_Swift_ConceptsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7D055592C74502800C50794 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D741002E2C652E8C007D38D8 /* Learning Swift Concepts */;
+			targetProxy = D7D055582C74502800C50794 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D741003B2C652E8E007D38D8 /* Debug */ = {
@@ -436,6 +520,40 @@
 			};
 			name = Release;
 		};
+		D7D0555B2C74502800C50794 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.currency.conversion.ios.Learning-Swift-ConceptsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Learning Swift Concepts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Learning Swift Concepts";
+			};
+			name = Debug;
+		};
+		D7D0555C2C74502800C50794 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.currency.conversion.ios.Learning-Swift-ConceptsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Learning Swift Concepts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Learning Swift Concepts";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -453,6 +571,15 @@
 			buildConfigurations = (
 				D741003E2C652E8E007D38D8 /* Debug */,
 				D741003F2C652E8E007D38D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7D0555A2C74502800C50794 /* Build configuration list for PBXNativeTarget "Learning Swift ConceptsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7D0555B2C74502800C50794 /* Debug */,
+				D7D0555C2C74502800C50794 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
